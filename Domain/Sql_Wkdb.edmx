@@ -4,7 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Domain.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Domain.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SYS_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATES" Type="datetime" />
+          <Property Name="LEVELS" Type="nvarchar" MaxLength="20" />
+          <Property Name="LOGGER" Type="nvarchar" MaxLength="200" />
+          <Property Name="CLIENTUSER" Type="nvarchar" MaxLength="100" />
+          <Property Name="CLIENTIP" Type="nvarchar" MaxLength="20" />
+          <Property Name="REQUESTURL" Type="nvarchar" MaxLength="500" />
+          <Property Name="ACTION" Type="nvarchar" MaxLength="20" />
+          <Property Name="MESSAGE" Type="nvarchar" MaxLength="4000" />
+          <Property Name="EXCEPTION" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
         <EntityType Name="SYS_USER">
           <Key>
             <PropertyRef Name="ID" />
@@ -28,10 +43,10 @@
           <Property Name="LastLoginIP" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="DomainStoreContainer">
+          <EntitySet Name="SYS_LOG" EntityType="Self.SYS_LOG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Domain" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -59,7 +74,23 @@
         </EntityType>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" />
+          <EntitySet Name="SYS_LOG" EntityType="Domain.SYS_LOG" />
         </EntityContainer>
+        <EntityType Name="SYS_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATES" Type="DateTime" Precision="3" />
+          <Property Name="LEVELS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LOGGER" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENTUSER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENTIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ACTION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MESSAGE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="EXCEPTION" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -86,6 +117,22 @@
                 <ScalarProperty Name="UPDATEUSER" ColumnName="UPDATEUSER" />
                 <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
                 <ScalarProperty Name="LastLoginIP" ColumnName="LastLoginIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_LOG">
+            <EntityTypeMapping TypeName="Domain.SYS_LOG">
+              <MappingFragment StoreEntitySet="SYS_LOG">
+                <ScalarProperty Name="EXCEPTION" ColumnName="EXCEPTION" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+                <ScalarProperty Name="REQUESTURL" ColumnName="REQUESTURL" />
+                <ScalarProperty Name="CLIENTIP" ColumnName="CLIENTIP" />
+                <ScalarProperty Name="CLIENTUSER" ColumnName="CLIENTUSER" />
+                <ScalarProperty Name="LOGGER" ColumnName="LOGGER" />
+                <ScalarProperty Name="LEVELS" ColumnName="LEVELS" />
+                <ScalarProperty Name="DATES" ColumnName="DATES" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
