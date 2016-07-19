@@ -69,6 +69,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sql_Wkdb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SYS_LOG.cs">
+      <DependentUpon>Sql_Wkdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="SYS_USER.cs">
       <DependentUpon>Sql_Wkdb.tt</DependentUpon>
     </Compile>

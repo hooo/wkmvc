@@ -185,7 +185,7 @@
     <Content Include="Areas\ComManage\Views\web.config" />
     <Content Include="Areas\SysManage\Views\web.config" />
     <Content Include="log4net.config" />
-    <Content Include="Areas\SysManage\Views\Index.cshtml" />
+    <Content Include="Areas\SysManage\Views\Account\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -200,7 +200,7 @@
     <Folder Include="Areas\ComManage\Views\Account\" />
     <Folder Include="Areas\ComManage\Views\Shared\" />
     <Folder Include="Areas\SysManage\Models\" />
-    <Folder Include="Areas\SysManage\Views\Shared\" />
+    <Folder Include="Areas\SysManage\Views\Account\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
