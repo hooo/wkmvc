@@ -1,0 +1,708 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- --------------------------------------------------
+-- Date Created: 07/19/2016 19:17:20
+-- Generated from EDMX file: D:\study\c#\wkmvc\Domain\Sql_Wkdb.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [wkmvc_db];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[FK_SYS_MODULE_SYSTEMID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_MODULE] DROP CONSTRAINT [FK_SYS_MODULE_SYSTEMID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_PERMISSION_MODULEID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_PERMISSION] DROP CONSTRAINT [FK_SYS_PERMISSION_MODULEID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_POST_DEPARTMENT_DPTID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_POST_DEPARTMENT] DROP CONSTRAINT [FK_SYS_POST_DEPARTMENT_DPTID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_POST_DEPARTMENT_POSTID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_POST_DEPARTMENT] DROP CONSTRAINT [FK_SYS_POST_DEPARTMENT_POSTID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_POST_USER_POSTDPTID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_POST_USER] DROP CONSTRAINT [FK_SYS_POST_USER_POSTDPTID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_POST_USER_USERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_POST_USER] DROP CONSTRAINT [FK_SYS_POST_USER_USERID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_ROLE_PERMISSION_PERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_ROLE_PERMISSION] DROP CONSTRAINT [FK_SYS_ROLE_PERMISSION_PERID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_ROLE_PERMISSION_ROLEID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_ROLE_PERMISSION] DROP CONSTRAINT [FK_SYS_ROLE_PERMISSION_ROLEID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USER_DEPARTMENT_DPTID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USER_DEPARTMENT] DROP CONSTRAINT [FK_SYS_USER_DEPARTMENT_DPTID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USER_DEPARTMENT_USERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USER_DEPARTMENT] DROP CONSTRAINT [FK_SYS_USER_DEPARTMENT_USERID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USER_PERMISSION_PERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USER_PERMISSION] DROP CONSTRAINT [FK_SYS_USER_PERMISSION_PERID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USER_PERMISSION_USERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USER_PERMISSION] DROP CONSTRAINT [FK_SYS_USER_PERMISSION_USERID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USER_ROLE_ROLEID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USER_ROLE] DROP CONSTRAINT [FK_SYS_USER_ROLE_ROLEID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USER_ROLE_USERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USER_ROLE] DROP CONSTRAINT [FK_SYS_USER_ROLE_USERID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SYS_USERINFO_SYSUSERID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SYS_USERINFO] DROP CONSTRAINT [FK_SYS_USERINFO_SYSUSERID];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[SYS_CODE]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_CODE];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_CODE_AREA]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_CODE_AREA];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_DEPARTMENT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_DEPARTMENT];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_LOG]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_LOG];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_MODULE]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_MODULE];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_PERMISSION]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_PERMISSION];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_POST]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_POST];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_POST_DEPARTMENT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_POST_DEPARTMENT];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_POST_USER]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_POST_USER];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_ROLE]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_ROLE];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_ROLE_PERMISSION]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_ROLE_PERMISSION];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_SYSTEM]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_SYSTEM];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_USER]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_USER];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_USER_DEPARTMENT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_USER_DEPARTMENT];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_USER_PERMISSION]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_USER_PERMISSION];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_USER_ROLE]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_USER_ROLE];
+GO
+IF OBJECT_ID(N'[dbo].[SYS_USERINFO]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SYS_USERINFO];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'SYS_USER'
+CREATE TABLE [dbo].[SYS_USER] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [NAME] nvarchar(50)  NULL,
+    [ACCOUNT] nvarchar(20)  NULL,
+    [PASSWORD] nvarchar(1000)  NULL,
+    [ISCANLOGIN] int  NULL,
+    [SHOWORDER1] int  NULL,
+    [SHOWORDER2] int  NULL,
+    [PINYIN1] nvarchar(50)  NULL,
+    [PINYIN2] nvarchar(50)  NULL,
+    [FACE_IMG] nvarchar(200)  NULL,
+    [LEVELS] nvarchar(36)  NULL,
+    [DPTID] nvarchar(36)  NULL,
+    [CREATEPER] nvarchar(36)  NULL,
+    [CREATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL,
+    [UPDATEDATE] datetime  NULL,
+    [LastLoginIP] nvarchar(50)  NULL
+);
+GO
+
+-- Creating table 'SYS_LOG'
+CREATE TABLE [dbo].[SYS_LOG] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [DATES] datetime  NULL,
+    [LEVELS] nvarchar(20)  NULL,
+    [LOGGER] nvarchar(200)  NULL,
+    [CLIENTUSER] nvarchar(100)  NULL,
+    [CLIENTIP] nvarchar(20)  NULL,
+    [REQUESTURL] nvarchar(500)  NULL,
+    [ACTION] nvarchar(20)  NULL,
+    [MESSAGE] nvarchar(4000)  NULL,
+    [EXCEPTION] nvarchar(4000)  NULL
+);
+GO
+
+-- Creating table 'SYS_CODE'
+CREATE TABLE [dbo].[SYS_CODE] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [CODETYPE] nvarchar(50)  NULL,
+    [NAMETEXT] nvarchar(200)  NULL,
+    [CODEVALUE] nvarchar(100)  NULL,
+    [SHOWORDER] int  NULL,
+    [ISCODE] int  NULL,
+    [REMARK] nvarchar(2000)  NULL,
+    [CREATEDATE] datetime  NULL,
+    [CREATEUSER] nvarchar(36)  NULL,
+    [UPDATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL,
+    [PARENTID] int  NULL
+);
+GO
+
+-- Creating table 'SYS_CODE_AREA'
+CREATE TABLE [dbo].[SYS_CODE_AREA] (
+    [ID] varchar(50)  NOT NULL,
+    [PID] varchar(50)  NOT NULL,
+    [NAME] nvarchar(200)  NULL,
+    [LEVELS] tinyint  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_DEPARTMENT'
+CREATE TABLE [dbo].[SYS_DEPARTMENT] (
+    [ID] nvarchar(36)  NOT NULL,
+    [CODE] nvarchar(100)  NULL,
+    [NAME] nvarchar(200)  NULL,
+    [BUSINESSLEVEL] int  NULL,
+    [SHOWORDER] int  NULL,
+    [CREATEPERID] nvarchar(36)  NULL,
+    [CREATEDATE] datetime  NULL,
+    [PARENTID] nvarchar(36)  NULL,
+    [UPDATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL,
+    [PARENTCODE] nvarchar(100)  NULL
+);
+GO
+
+-- Creating table 'SYS_MODULE'
+CREATE TABLE [dbo].[SYS_MODULE] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [FK_BELONGSYSTEM] nvarchar(36)  NOT NULL,
+    [PARENTID] int  NOT NULL,
+    [NAME] nvarchar(50)  NULL,
+    [ALIAS] nvarchar(50)  NULL,
+    [MODULETYPE] int  NOT NULL,
+    [ICON] nvarchar(200)  NULL,
+    [MODULEPATH] nvarchar(500)  NULL,
+    [ISSHOW] int  NOT NULL,
+    [SHOWORDER] int  NOT NULL,
+    [LEVELS] int  NOT NULL,
+    [IsVillage] bit  NOT NULL,
+    [CREATEUSER] nvarchar(50)  NULL,
+    [CREATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL,
+    [UPDATEDATE] datetime  NULL
+);
+GO
+
+-- Creating table 'SYS_PERMISSION'
+CREATE TABLE [dbo].[SYS_PERMISSION] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [MODULEID] int  NOT NULL,
+    [NAME] nvarchar(36)  NULL,
+    [PERVALUE] nvarchar(100)  NULL,
+    [ICON] nvarchar(50)  NULL,
+    [SHOWORDER] int  NULL,
+    [CREATEDATE] datetime  NULL,
+    [CREATEUSER] nvarchar(36)  NULL,
+    [UPDATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL
+);
+GO
+
+-- Creating table 'SYS_POST'
+CREATE TABLE [dbo].[SYS_POST] (
+    [ID] nvarchar(36)  NOT NULL,
+    [POSTNAME] nvarchar(100)  NULL,
+    [POSTTYPE] nvarchar(36)  NOT NULL,
+    [REMARK] nvarchar(500)  NULL,
+    [SHOWORDER] int  NULL,
+    [CREATEUSERID] int  NULL,
+    [CREATEDATE] datetime  NOT NULL,
+    [UPDATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL
+);
+GO
+
+-- Creating table 'SYS_POST_DEPARTMENT'
+CREATE TABLE [dbo].[SYS_POST_DEPARTMENT] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [FK_DEPARTMENT_ID] nvarchar(36)  NOT NULL,
+    [FK_POST_ID] nvarchar(36)  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_POST_USER'
+CREATE TABLE [dbo].[SYS_POST_USER] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [FK_USERID] int  NOT NULL,
+    [FK_POST_DEPARTMENTID] int  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_ROLE'
+CREATE TABLE [dbo].[SYS_ROLE] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [ROLENAME] nvarchar(50)  NULL,
+    [ISCUSTOM] int  NOT NULL,
+    [ROLEDESC] nvarchar(1000)  NULL,
+    [CREATEPERID] nvarchar(36)  NOT NULL,
+    [CREATEDATE] datetime  NOT NULL,
+    [UPDATEDATE] datetime  NOT NULL,
+    [UPDATEUSER] nvarchar(36)  NULL
+);
+GO
+
+-- Creating table 'SYS_ROLE_PERMISSION'
+CREATE TABLE [dbo].[SYS_ROLE_PERMISSION] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [ROLEID] int  NOT NULL,
+    [PERMISSIONID] int  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_SYSTEM'
+CREATE TABLE [dbo].[SYS_SYSTEM] (
+    [ID] nvarchar(36)  NOT NULL,
+    [NAME] nvarchar(200)  NULL,
+    [SITEURL] nvarchar(500)  NULL,
+    [IS_LOGIN] tinyint  NULL,
+    [DOCKUSER] nvarchar(100)  NULL,
+    [DOCKPASS] nvarchar(200)  NULL,
+    [CREATEDATE] datetime  NULL,
+    [REMARK] nvarchar(2000)  NULL
+);
+GO
+
+-- Creating table 'SYS_USER_DEPARTMENT'
+CREATE TABLE [dbo].[SYS_USER_DEPARTMENT] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [USER_ID] int  NOT NULL,
+    [DEPARTMENT_ID] nvarchar(36)  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_USER_PERMISSION'
+CREATE TABLE [dbo].[SYS_USER_PERMISSION] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [FK_USERID] int  NOT NULL,
+    [FK_PERMISSIONID] int  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_USER_ROLE'
+CREATE TABLE [dbo].[SYS_USER_ROLE] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [FK_USERID] int  NOT NULL,
+    [FK_ROLEID] int  NOT NULL
+);
+GO
+
+-- Creating table 'SYS_USERINFO'
+CREATE TABLE [dbo].[SYS_USERINFO] (
+    [ID] int  NOT NULL,
+    [USERID] int  NOT NULL,
+    [POSTCODE] int  NULL,
+    [PHONE] nvarchar(200)  NULL,
+    [OFFICEPHONE] nvarchar(200)  NULL,
+    [EMAILADDRESS] nvarchar(200)  NULL,
+    [SECONDPHONE] nvarchar(200)  NULL,
+    [WORKCODE] int  NULL,
+    [SEXCODE] int  NULL,
+    [BIRTHDAY] datetime  NULL,
+    [NATIONCODE] int  NULL,
+    [IDNUMBER] nvarchar(18)  NULL,
+    [MARRYCODE] int  NULL,
+    [IDENTITYCODE] int  NULL,
+    [HomeTown] nvarchar(200)  NULL,
+    [ACCOUNTLOCATION] nvarchar(200)  NULL,
+    [XUELI] int  NULL,
+    [ZHICHENG] int  NULL,
+    [GRADUATIONSCHOOL] nvarchar(200)  NULL,
+    [SPECIALTY] nvarchar(200)  NULL,
+    [PHOTOOLDNAME] nvarchar(200)  NULL,
+    [PHOTONEWNAME] nvarchar(200)  NULL,
+    [PHOTOTYPE] nvarchar(200)  NULL,
+    [RESUMEOLDNAME] nvarchar(200)  NULL,
+    [RESUMENEWNAME] nvarchar(200)  NULL,
+    [RESUMETYPE] nvarchar(200)  NULL,
+    [HuJiSuoZaiDi] nvarchar(200)  NULL,
+    [HUJIPAICHUSUO] nvarchar(200)  NULL,
+    [WORKDATE] datetime  NULL,
+    [JINRUDATE] datetime  NULL,
+    [CARNUMBER] nvarchar(200)  NULL,
+    [QQ] nvarchar(15)  NULL,
+    [WEBCHATOPENID] nvarchar(200)  NULL,
+    [CREATEDATE] datetime  NULL,
+    [CREATEUSER] nvarchar(36)  NULL,
+    [UPDATEDATE] datetime  NULL,
+    [UPDATEUSER] nvarchar(36)  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [ID] in table 'SYS_USER'
+ALTER TABLE [dbo].[SYS_USER]
+ADD CONSTRAINT [PK_SYS_USER]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_LOG'
+ALTER TABLE [dbo].[SYS_LOG]
+ADD CONSTRAINT [PK_SYS_LOG]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_CODE'
+ALTER TABLE [dbo].[SYS_CODE]
+ADD CONSTRAINT [PK_SYS_CODE]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_CODE_AREA'
+ALTER TABLE [dbo].[SYS_CODE_AREA]
+ADD CONSTRAINT [PK_SYS_CODE_AREA]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_DEPARTMENT]
+ADD CONSTRAINT [PK_SYS_DEPARTMENT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_MODULE'
+ALTER TABLE [dbo].[SYS_MODULE]
+ADD CONSTRAINT [PK_SYS_MODULE]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_PERMISSION'
+ALTER TABLE [dbo].[SYS_PERMISSION]
+ADD CONSTRAINT [PK_SYS_PERMISSION]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_POST'
+ALTER TABLE [dbo].[SYS_POST]
+ADD CONSTRAINT [PK_SYS_POST]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_POST_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_POST_DEPARTMENT]
+ADD CONSTRAINT [PK_SYS_POST_DEPARTMENT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_POST_USER'
+ALTER TABLE [dbo].[SYS_POST_USER]
+ADD CONSTRAINT [PK_SYS_POST_USER]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_ROLE'
+ALTER TABLE [dbo].[SYS_ROLE]
+ADD CONSTRAINT [PK_SYS_ROLE]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_ROLE_PERMISSION'
+ALTER TABLE [dbo].[SYS_ROLE_PERMISSION]
+ADD CONSTRAINT [PK_SYS_ROLE_PERMISSION]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_SYSTEM'
+ALTER TABLE [dbo].[SYS_SYSTEM]
+ADD CONSTRAINT [PK_SYS_SYSTEM]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_USER_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_USER_DEPARTMENT]
+ADD CONSTRAINT [PK_SYS_USER_DEPARTMENT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_USER_PERMISSION'
+ALTER TABLE [dbo].[SYS_USER_PERMISSION]
+ADD CONSTRAINT [PK_SYS_USER_PERMISSION]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_USER_ROLE'
+ALTER TABLE [dbo].[SYS_USER_ROLE]
+ADD CONSTRAINT [PK_SYS_USER_ROLE]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'SYS_USERINFO'
+ALTER TABLE [dbo].[SYS_USERINFO]
+ADD CONSTRAINT [PK_SYS_USERINFO]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [FK_DEPARTMENT_ID] in table 'SYS_POST_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_POST_DEPARTMENT]
+ADD CONSTRAINT [FK_SYS_POST_DEPARTMENT_DPTID]
+    FOREIGN KEY ([FK_DEPARTMENT_ID])
+    REFERENCES [dbo].[SYS_DEPARTMENT]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_POST_DEPARTMENT_DPTID'
+CREATE INDEX [IX_FK_SYS_POST_DEPARTMENT_DPTID]
+ON [dbo].[SYS_POST_DEPARTMENT]
+    ([FK_DEPARTMENT_ID]);
+GO
+
+-- Creating foreign key on [DEPARTMENT_ID] in table 'SYS_USER_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_USER_DEPARTMENT]
+ADD CONSTRAINT [FK_SYS_USER_DEPARTMENT_DPTID]
+    FOREIGN KEY ([DEPARTMENT_ID])
+    REFERENCES [dbo].[SYS_DEPARTMENT]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USER_DEPARTMENT_DPTID'
+CREATE INDEX [IX_FK_SYS_USER_DEPARTMENT_DPTID]
+ON [dbo].[SYS_USER_DEPARTMENT]
+    ([DEPARTMENT_ID]);
+GO
+
+-- Creating foreign key on [FK_BELONGSYSTEM] in table 'SYS_MODULE'
+ALTER TABLE [dbo].[SYS_MODULE]
+ADD CONSTRAINT [FK_SYS_MODULE_SYSTEMID]
+    FOREIGN KEY ([FK_BELONGSYSTEM])
+    REFERENCES [dbo].[SYS_SYSTEM]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_MODULE_SYSTEMID'
+CREATE INDEX [IX_FK_SYS_MODULE_SYSTEMID]
+ON [dbo].[SYS_MODULE]
+    ([FK_BELONGSYSTEM]);
+GO
+
+-- Creating foreign key on [MODULEID] in table 'SYS_PERMISSION'
+ALTER TABLE [dbo].[SYS_PERMISSION]
+ADD CONSTRAINT [FK_SYS_PERMISSION_MODULEID]
+    FOREIGN KEY ([MODULEID])
+    REFERENCES [dbo].[SYS_MODULE]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_PERMISSION_MODULEID'
+CREATE INDEX [IX_FK_SYS_PERMISSION_MODULEID]
+ON [dbo].[SYS_PERMISSION]
+    ([MODULEID]);
+GO
+
+-- Creating foreign key on [PERMISSIONID] in table 'SYS_ROLE_PERMISSION'
+ALTER TABLE [dbo].[SYS_ROLE_PERMISSION]
+ADD CONSTRAINT [FK_SYS_ROLE_PERMISSION_PERID]
+    FOREIGN KEY ([PERMISSIONID])
+    REFERENCES [dbo].[SYS_PERMISSION]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_ROLE_PERMISSION_PERID'
+CREATE INDEX [IX_FK_SYS_ROLE_PERMISSION_PERID]
+ON [dbo].[SYS_ROLE_PERMISSION]
+    ([PERMISSIONID]);
+GO
+
+-- Creating foreign key on [FK_PERMISSIONID] in table 'SYS_USER_PERMISSION'
+ALTER TABLE [dbo].[SYS_USER_PERMISSION]
+ADD CONSTRAINT [FK_SYS_USER_PERMISSION_PERID]
+    FOREIGN KEY ([FK_PERMISSIONID])
+    REFERENCES [dbo].[SYS_PERMISSION]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USER_PERMISSION_PERID'
+CREATE INDEX [IX_FK_SYS_USER_PERMISSION_PERID]
+ON [dbo].[SYS_USER_PERMISSION]
+    ([FK_PERMISSIONID]);
+GO
+
+-- Creating foreign key on [FK_POST_ID] in table 'SYS_POST_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_POST_DEPARTMENT]
+ADD CONSTRAINT [FK_SYS_POST_DEPARTMENT_POSTID]
+    FOREIGN KEY ([FK_POST_ID])
+    REFERENCES [dbo].[SYS_POST]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_POST_DEPARTMENT_POSTID'
+CREATE INDEX [IX_FK_SYS_POST_DEPARTMENT_POSTID]
+ON [dbo].[SYS_POST_DEPARTMENT]
+    ([FK_POST_ID]);
+GO
+
+-- Creating foreign key on [FK_POST_DEPARTMENTID] in table 'SYS_POST_USER'
+ALTER TABLE [dbo].[SYS_POST_USER]
+ADD CONSTRAINT [FK_SYS_POST_USER_POSTDPTID]
+    FOREIGN KEY ([FK_POST_DEPARTMENTID])
+    REFERENCES [dbo].[SYS_POST_DEPARTMENT]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_POST_USER_POSTDPTID'
+CREATE INDEX [IX_FK_SYS_POST_USER_POSTDPTID]
+ON [dbo].[SYS_POST_USER]
+    ([FK_POST_DEPARTMENTID]);
+GO
+
+-- Creating foreign key on [FK_USERID] in table 'SYS_POST_USER'
+ALTER TABLE [dbo].[SYS_POST_USER]
+ADD CONSTRAINT [FK_SYS_POST_USER_USERID]
+    FOREIGN KEY ([FK_USERID])
+    REFERENCES [dbo].[SYS_USER]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_POST_USER_USERID'
+CREATE INDEX [IX_FK_SYS_POST_USER_USERID]
+ON [dbo].[SYS_POST_USER]
+    ([FK_USERID]);
+GO
+
+-- Creating foreign key on [ROLEID] in table 'SYS_ROLE_PERMISSION'
+ALTER TABLE [dbo].[SYS_ROLE_PERMISSION]
+ADD CONSTRAINT [FK_SYS_ROLE_PERMISSION_ROLEID]
+    FOREIGN KEY ([ROLEID])
+    REFERENCES [dbo].[SYS_ROLE]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_ROLE_PERMISSION_ROLEID'
+CREATE INDEX [IX_FK_SYS_ROLE_PERMISSION_ROLEID]
+ON [dbo].[SYS_ROLE_PERMISSION]
+    ([ROLEID]);
+GO
+
+-- Creating foreign key on [FK_ROLEID] in table 'SYS_USER_ROLE'
+ALTER TABLE [dbo].[SYS_USER_ROLE]
+ADD CONSTRAINT [FK_SYS_USER_ROLE_ROLEID]
+    FOREIGN KEY ([FK_ROLEID])
+    REFERENCES [dbo].[SYS_ROLE]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USER_ROLE_ROLEID'
+CREATE INDEX [IX_FK_SYS_USER_ROLE_ROLEID]
+ON [dbo].[SYS_USER_ROLE]
+    ([FK_ROLEID]);
+GO
+
+-- Creating foreign key on [USER_ID] in table 'SYS_USER_DEPARTMENT'
+ALTER TABLE [dbo].[SYS_USER_DEPARTMENT]
+ADD CONSTRAINT [FK_SYS_USER_DEPARTMENT_USERID]
+    FOREIGN KEY ([USER_ID])
+    REFERENCES [dbo].[SYS_USER]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USER_DEPARTMENT_USERID'
+CREATE INDEX [IX_FK_SYS_USER_DEPARTMENT_USERID]
+ON [dbo].[SYS_USER_DEPARTMENT]
+    ([USER_ID]);
+GO
+
+-- Creating foreign key on [FK_USERID] in table 'SYS_USER_PERMISSION'
+ALTER TABLE [dbo].[SYS_USER_PERMISSION]
+ADD CONSTRAINT [FK_SYS_USER_PERMISSION_USERID]
+    FOREIGN KEY ([FK_USERID])
+    REFERENCES [dbo].[SYS_USER]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USER_PERMISSION_USERID'
+CREATE INDEX [IX_FK_SYS_USER_PERMISSION_USERID]
+ON [dbo].[SYS_USER_PERMISSION]
+    ([FK_USERID]);
+GO
+
+-- Creating foreign key on [FK_USERID] in table 'SYS_USER_ROLE'
+ALTER TABLE [dbo].[SYS_USER_ROLE]
+ADD CONSTRAINT [FK_SYS_USER_ROLE_USERID]
+    FOREIGN KEY ([FK_USERID])
+    REFERENCES [dbo].[SYS_USER]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USER_ROLE_USERID'
+CREATE INDEX [IX_FK_SYS_USER_ROLE_USERID]
+ON [dbo].[SYS_USER_ROLE]
+    ([FK_USERID]);
+GO
+
+-- Creating foreign key on [USERID] in table 'SYS_USERINFO'
+ALTER TABLE [dbo].[SYS_USERINFO]
+ADD CONSTRAINT [FK_SYS_USERINFO_SYSUSERID]
+    FOREIGN KEY ([USERID])
+    REFERENCES [dbo].[SYS_USER]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SYS_USERINFO_SYSUSERID'
+CREATE INDEX [IX_FK_SYS_USERINFO_SYSUSERID]
+ON [dbo].[SYS_USERINFO]
+    ([USERID]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------

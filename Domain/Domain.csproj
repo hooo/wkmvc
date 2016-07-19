@@ -140,6 +140,7 @@
       <DependentUpon>Sql_Wkdb.edmx</DependentUpon>
       <LastGenOutput>Sql_Wkdb.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Sql_Wkdb.edmx.sql" />
     <Content Include="Sql_Wkdb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sql_Wkdb.edmx</DependentUpon>
