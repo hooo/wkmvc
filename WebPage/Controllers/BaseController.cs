@@ -25,6 +25,7 @@ namespace WebPage.Controllers
         /// </summary>
         public int pagesize { get; set; }
         /// <summary>
+        /// 
         /// 用户容器，公用
         /// </summary>
         public IUserManage UserManage = Spring.Context.Support.ContextRegistry.GetContext().GetObject("Service.User") as IUserManage;

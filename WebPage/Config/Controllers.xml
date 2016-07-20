@@ -16,5 +16,15 @@
     <property name="PerssionManage" ref="Service.Perssion"/>
     <property name="SystemManage" ref="Service.System"/>
   </object>
+
+  <!--模块权限-->
+  <object id="Service.Permission" type="Service.ServiceImp.PermissionManage,Service" singleton="false">
+  </object>
+  <!--系统权限-->
+  <object id="Service.System" type="Service.ServiceImp.SystemManage,Service" singleton="false">
+  </object>
+  <!--系统权限-->
+  <object id="Service.Module" type="Service.ServiceImp.ModuleManage,Service" singleton="false">
+  </object>
   <!--系统管理 end-->
 </objects>

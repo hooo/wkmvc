@@ -11,13 +11,13 @@ namespace Service.ServiceImp
 {
     public class UserManage : RepositoryBase<Domain.SYS_USER>, IService.IUserManage
     {
-        IDepartmentManage DepartmentManage { get; set; }
-        IUserDepartmentManage UserDepartmentManage { get; set; }
-        IUserInfoManage UserInfoManage { get; set; }
-        IUserRoleManage UserRoleManage { get; set; }
-        IUserPermissionManage UserPermissionManage { get; set; }
-        IPostUserManage PostUserManage { get; set; }
-        IPermissionManage PermissionManage { get; set; }
+        public IDepartmentManage DepartmentManage { get; set; }
+        public IUserDepartmentManage UserDepartmentManage { get; set; }
+        public IUserInfoManage UserInfoManage { get; set; }
+        public IUserRoleManage UserRoleManage { get; set; }
+        public IUserPermissionManage UserPermissionManage { get; set; }
+        public IPostUserManage PostUserManage { get; set; }
+        public IPermissionManage PermissionManage { get; set; }
 
         /// <summary>
         /// 管理用户登录验证

@@ -161,9 +161,19 @@
     <EmbeddedResource Include="Config\ComControllers.xml" />
     <EmbeddedResource Include="Config\Controllers.xml" />
     <EmbeddedResource Include="Config\IndexControllers.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +197,13 @@
     <Content Include="Areas\SysManage\Views\web.config" />
     <Content Include="log4net.config" />
     <Content Include="Areas\SysManage\Views\Account\Index.cshtml" />
+    <Content Include="Areas\SysManage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SysManage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\SysManage\Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -202,7 +219,6 @@
     <Folder Include="Areas\ComManage\Views\Shared\" />
     <Folder Include="Areas\SysManage\Models\" />
     <Folder Include="Areas\SysManage\Views\Account\Shared\" />
-    <Folder Include="Areas\SysManage\Views\Home\" />
     <Folder Include="Areas\SysManage\Views\Module\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
