@@ -19,7 +19,7 @@ namespace Service.ServiceImp
         /// <param name="permission">用户授权集合</param>
         /// <param name="siteId">站点ID</param>
         /// <returns></returns>
-        public List<Domain.SYS_MODULE> GetModule(int userId, List<Domain.SYS_PERMISSION> permission, string siteId)
+        public List<Domain.SYS_MODULE> GetModule(int userId, List<Domain.SYS_PERMISSION> permission, List<string> systemid)
         {
             //返回模块
             var retmodule = new List<Domain.SYS_MODULE>();
@@ -32,13 +32,9 @@ namespace Service.ServiceImp
                 permodule = permodule.Distinct(new ModuleDistinct()).ToList();
             }
             //检索显示与系统
-            //permodule = permodule.Where(p => p.ISSHOW == 1 && p.FK_BELONGSYSTEM.ToString() == siteId).ToList();
-            //商城系统融入本系统不再区分系统
-            permodule = permodule.Where(p => p.ISSHOW == 1).ToList();
+            permodule = permodule.Where(p => p.ISSHOW && systemid.Any(e => e == p.FK_BELONGSYSTEM)).ToList();
             //构造上级导航模块
-            //var prevModule = this.LoadListAll(p => p.FK_BELONGSYSTEM.ToString() == siteId);
-            //商城系统融入本系统不再区分系统
-            var prevModule = this.LoadListAll(null);
+            var prevModule = this.LoadListAll(p => systemid.Any(e => e == p.FK_BELONGSYSTEM));
             //反向递归算法构造模块带上级上上级模块
             if (permodule.Count > 0)
             {

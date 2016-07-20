@@ -56,6 +56,11 @@ namespace Service
         /// 用户可操作的模块集合
         /// </summary>
         public List<Domain.SYS_MODULE> Modules { get; set; }
+
+        /// <summary>
+        /// 为了实现不同角色不同系统的登录，把角色拥有的系统ID 添加到这个List里面
+        /// </summary>
+        public List<string> System_Id { get; set; }
         #endregion
     }
 }

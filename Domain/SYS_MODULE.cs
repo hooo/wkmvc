@@ -28,7 +28,7 @@ namespace Domain
         public int MODULETYPE { get; set; }
         public string ICON { get; set; }
         public string MODULEPATH { get; set; }
-        public int ISSHOW { get; set; }
+        public bool ISSHOW { get; set; }
         public int SHOWORDER { get; set; }
         public int LEVELS { get; set; }
         public bool IsVillage { get; set; }

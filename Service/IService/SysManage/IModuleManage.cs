@@ -19,7 +19,7 @@ namespace Service.IService
         /// <param name="permission">用户授权集合</param>
         /// <param name="siteId">站点ID</param>
         /// <returns></returns>
-        List<Domain.SYS_MODULE> GetModule(int userId, List<Domain.SYS_PERMISSION> permission, string siteId);
+        List<Domain.SYS_MODULE> GetModule(int userId, List<Domain.SYS_PERMISSION> permission, List<string> systemid);
         /// <summary>
         /// 递归模块列表，返回按级别排序
         /// add yuangang by 2015-06-03

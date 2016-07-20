@@ -6,5 +6,15 @@
   <object type="WebPage.Areas.SysManage.Controllers.AccountController,WebPage" singleton="false">
     <property name="UserManage" ref="Service.User"/>
   </object>
+  <!--主页控制器-->
+  <object type="WebPage.Areas.SysManage.Controllers.HomeController,WebPage" singleton="false">
+    <property name="ModuleManage" ref="Service.Module"/>
+  </object>
+  <!--模块管理-->
+  <object type="WebPage.Areas.SysManage.Controllers.ModuleController,WebPage" singleton="false">
+    <property name="ModuleManage" ref="Service.Module"/>
+    <property name="PerssionManage" ref="Service.Perssion"/>
+    <property name="SystemManage" ref="Service.System"/>
+  </object>
   <!--系统管理 end-->
 </objects>
