@@ -36,6 +36,26 @@
                                                             @maxlength = 12,
                                                             @required = "required"
                                                         })
+                <div class="form_control">
+                    @Html.TextBox("code","",
+                                                        new
+                                                        {
+                                                            @class = "form-control",
+                                                            @placeholder = "请输入验证码",
+                                                            @datetype = '*',
+                                                            @nullmsg = "请输入验证码",
+                                                            @maxlength = 4,
+                                                            @required = "required",
+                                                            @atuocomplete = "off"
+
+                                                        })
+                    <div class="code_img">
+                        <img id="imgVerify" src="/Sys/Account/ValidateCode" alt="看不清，点击更换" onclick="this.src = this.src + '?'" style="vertical-align:middle" />
+
+                    </div>
+
+                </div>
+
                 <button type="submit" id="login-button"></button>
             }
 
