@@ -163,6 +163,13 @@
     <EmbeddedResource Include="Config\IndexControllers.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\login\login.css" />
+    <Content Include="Content\js\login\sketch.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Content\js\login\login.min.js" />
+    <Content Include="Content\js\login\jquery-ui.min.js" />
+    <Content Include="Content\js\login\stopExecutionOnTimeout.js" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -173,6 +180,8 @@
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -203,7 +212,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -220,6 +228,8 @@
     <Folder Include="Areas\SysManage\Models\" />
     <Folder Include="Areas\SysManage\Views\Account\Shared\" />
     <Folder Include="Areas\SysManage\Views\Module\" />
+    <Folder Include="Content\fonts\" />
+    <Folder Include="Content\images\login\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
