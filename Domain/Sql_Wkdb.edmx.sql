@@ -212,7 +212,7 @@ CREATE TABLE [dbo].[SYS_MODULE] (
     [MODULETYPE] int  NOT NULL,
     [ICON] nvarchar(200)  NULL,
     [MODULEPATH] nvarchar(500)  NULL,
-    [ISSHOW] int  NOT NULL,
+    [ISSHOW] bit  NOT NULL,
     [SHOWORDER] int  NOT NULL,
     [LEVELS] int  NOT NULL,
     [IsVillage] bit  NOT NULL,

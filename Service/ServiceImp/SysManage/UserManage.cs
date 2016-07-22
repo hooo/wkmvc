@@ -168,6 +168,7 @@ namespace Service.ServiceImp
             var dptInfo = this.DepartmentManage.Get(p => p.ID == users.DPTID);
             //用户模块
             var module = permission.Select(p => p.SYS_MODULE).ToList().Distinct(new ModuleDistinct()).ToList();
+            var systemid = new List<string> { "bac", "123" };
             Account account = new Account()
             {
                 Id = users.ID,
@@ -181,7 +182,8 @@ namespace Service.ServiceImp
                 Permissions = permission,
                 Roles = role,
                 PostUser = post,
-                Modules = module
+                Modules = module,
+                System_Id = systemid
             };
             return account;
         }

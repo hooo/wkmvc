@@ -74,7 +74,7 @@
           <Property Name="MODULETYPE" Type="int" Nullable="false" />
           <Property Name="ICON" Type="nvarchar" MaxLength="200" />
           <Property Name="MODULEPATH" Type="nvarchar" MaxLength="500" />
-          <Property Name="ISSHOW" Type="int" Nullable="false" />
+          <Property Name="ISSHOW" Type="bit" Nullable="false" />
           <Property Name="SHOWORDER" Type="int" Nullable="false" />
           <Property Name="LEVELS" Type="int" Nullable="false" />
           <Property Name="IsVillage" Type="bit" Nullable="false" />
@@ -690,7 +690,7 @@
           <Property Name="MODULETYPE" Type="Int32" Nullable="false" />
           <Property Name="ICON" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="MODULEPATH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="ISSHOW" Type="Int32" Nullable="false" />
+          <Property Name="ISSHOW" Type="Boolean" Nullable="false" />
           <Property Name="SHOWORDER" Type="Int32" Nullable="false" />
           <Property Name="LEVELS" Type="Int32" Nullable="false" />
           <Property Name="IsVillage" Type="Boolean" Nullable="false" />

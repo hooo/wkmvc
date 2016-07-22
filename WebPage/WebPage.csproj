@@ -177,6 +177,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Areas\SysManage\Views\Module\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -227,7 +228,6 @@
     <Folder Include="Areas\ComManage\Views\Shared\" />
     <Folder Include="Areas\SysManage\Models\" />
     <Folder Include="Areas\SysManage\Views\Account\Shared\" />
-    <Folder Include="Areas\SysManage\Views\Module\" />
     <Folder Include="Content\fonts\" />
     <Folder Include="Content\images\login\" />
     <Folder Include="Views\Base\" />
