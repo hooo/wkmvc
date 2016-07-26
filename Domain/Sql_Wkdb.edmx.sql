@@ -703,6 +703,8 @@ ON [dbo].[SYS_USERINFO]
     ([USERID]);
 GO
 
+-- Test data user:admin password:123456
+insert into SYS_USER values('admin','admin','C4D66F511ADD5D9FDD139A592B2BD0C1A65FCD6EDD63D5EA9AAADA201FE97DC8231EA5CF3EA995306B0FD8089629109D','0','2','0','fang','shuhui','','1','45','','','','','');
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------
