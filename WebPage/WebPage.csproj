@@ -194,6 +194,7 @@
     <Compile Include="Areas\SysManage\Controllers\ModuleController.cs" />
     <Compile Include="Areas\SysManage\SysManageAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +232,7 @@
     <Folder Include="Content\fonts\" />
     <Folder Include="Content\images\login\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
